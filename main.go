@@ -8,10 +8,17 @@ import (
 	tea "github.com/charmbracelet/bubbletea"
 )
 
+var version = "dev"
+
 func main() {
 	var rootsFlag rootFlags
 	flag.Var(&rootsFlag, "root", "project directory or Git repository to scan; repeatable")
+	showVersion := flag.Bool("version", false, "print version and exit")
 	flag.Parse()
+	if *showVersion {
+		fmt.Println(version)
+		return
+	}
 
 	runtime, err := newRuntimeManager("")
 	if err != nil {

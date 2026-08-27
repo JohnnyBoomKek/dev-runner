@@ -1,4 +1,4 @@
-module github.com/dmitrygoncharov/dev-runner
+module github.com/JohnnyBoomKek/dev-runner
 
 go 1.23
 
