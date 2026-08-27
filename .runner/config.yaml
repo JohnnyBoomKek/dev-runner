@@ -1,0 +1,14 @@
+name: dev-runner
+
+services:
+  - name: tui
+    command: go run .
+
+actions:
+  - name: test
+    key: t
+    command: go test ./...
+
+  - name: format
+    key: f
+    command: gofmt -w main.go main_test.go
